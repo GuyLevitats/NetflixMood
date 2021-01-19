@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.netflixmood">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".PagesPackage.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PagesPackage.AllMoviesActivity" />
+        <activity android:name=".PagesPackage.StartActivity" />
+        <activity android:name=".PagesPackage.Question1Activity" />
+        <activity android:name=".PagesPackage.Question2Activity" />
+        <activity android:name=".PagesPackage.Question3Activity" />
+        <activity android:name=".PagesPackage.Question4Activity" />
+        <activity android:name=".PagesPackage.DetailsMovieActivity" />
+        <activity android:name=".PagesPackage.AddMovieActivity" />
+        <activity android:name=".PagesPackage.AlarmActivity" />
+
+        <receiver android:name=".BRPackage.BroadcastReceiverBattery">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".BRPackage.BroadcastReceiverAlarm"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+    </application>
+
+</manifest>
